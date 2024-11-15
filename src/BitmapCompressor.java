@@ -23,7 +23,7 @@
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  *  @author Zach Blick
- *  @author YOUR NAME HERE
+ *  @author Sabrina Vohra
  */
 public class BitmapCompressor {
 
@@ -32,8 +32,27 @@ public class BitmapCompressor {
      * and writes the results to standard output.
      */
     public static void compress() {
-
         // TODO: complete compress()
+        String remaining = BinaryStdIn.readString();
+        int currentRun = 0;
+        int currentVal = 2;
+        for(int i = 0; i < remaining.length(); i++) {
+            if(currentVal == remaining.charAt(i)) {
+                currentRun++;
+                if(currentRun == 99) {
+                    if(currentVal == 0) {
+                        BinaryStdOut.write(990);
+                    }
+                    if(currentVal == 1) {
+                        BinaryStdOut.write(991);
+                    }
+                }
+            }
+            else {
+                // If the current char is not equal to the current Value, then print out the currentRun and start a new one
+            }
+        }
+
 
         BinaryStdOut.close();
     }
