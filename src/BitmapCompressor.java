@@ -26,34 +26,36 @@
  *  @author Sabrina Vohra
  */
 public class BitmapCompressor {
-
     /**
      * Reads a sequence of bits from standard input, compresses them,
      * and writes the results to standard output.
      */
     public static void compress() {
         // TODO: complete compress()
-        String remaining = BinaryStdIn.readString();
+        int bit = BinaryStdIn.readInt(1);
         int currentRun = 0;
         int currentVal = 2;
-        for(int i = 0; i < remaining.length(); i++) {
-            if(currentVal == remaining.charAt(i)) {
-                currentRun++;
-                if(currentRun == 99) {
-                    if(currentVal == 0) {
-                        BinaryStdOut.write(990);
-                    }
-                    if(currentVal == 1) {
-                        BinaryStdOut.write(991);
-                    }
+        if(bit == currentVal) {
+            currentRun++;
+            if(currentRun == 99) {
+                if(currentVal == 0) {
+                    BinaryStdOut.write(990, 3);
+                }
+                else {
+                    BinaryStdOut.write(991, 3);
                 }
             }
+        }
+        else {
+            BinaryStdOut.write(currentRun + "" + currentVal);
+            currentRun = 0;
+            if(currentVal == 0) {
+                currentVal = 1;
+            }
             else {
-                // If the current char is not equal to the current Value, then print out the currentRun and start a new one
+                currentVal = 0;
             }
         }
-
-
         BinaryStdOut.close();
     }
 
@@ -62,9 +64,18 @@ public class BitmapCompressor {
      * and writes the results to standard output.
      */
     public static void expand() {
-
         // TODO: complete expand()
-
+        int a = BinaryStdIn.readInt(3);
+        if((a % 10) == 0) {
+            for(int i = 0; i < a/10; i++) {
+                BinaryStdOut.write(0);
+            }
+        }
+        else {
+            for(int i = 0; i < a/10; i++) {
+                BinaryStdOut.write(1);
+            }
+        }
         BinaryStdOut.close();
     }
 
