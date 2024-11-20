@@ -32,28 +32,30 @@ public class BitmapCompressor {
      */
     public static void compress() {
         // TODO: complete compress()
-        int bit = BinaryStdIn.readInt(1);
-        int currentRun = 0;
-        int currentVal = 2;
-        if(bit == currentVal) {
-            currentRun++;
-            if(currentRun == 99) {
-                if(currentVal == 0) {
-                    BinaryStdOut.write(990, 3);
+        while(BinaryStdIn.readInt(1) != "") {
+            int bit = BinaryStdIn.readInt(1);
+            int currentRun = 0;
+            int currentVal = bit;
+            if(bit == currentVal) {
+                currentRun++;
+                if(currentRun == 99) {
+                    if(currentVal == 0) {
+                        BinaryStdOut.write(990, 3);
+                    }
+                    else {
+                        BinaryStdOut.write(991, 3);
+                    }
                 }
-                else {
-                    BinaryStdOut.write(991, 3);
-                }
-            }
-        }
-        else {
-            BinaryStdOut.write(currentRun + "" + currentVal);
-            currentRun = 0;
-            if(currentVal == 0) {
-                currentVal = 1;
             }
             else {
-                currentVal = 0;
+                BinaryStdOut.write(currentRun + "" + currentVal);
+                currentRun = 0;
+                if(currentVal == 0) {
+                    currentVal = 1;
+                }
+                else {
+                    currentVal = 0;
+                }
             }
         }
         BinaryStdOut.close();
