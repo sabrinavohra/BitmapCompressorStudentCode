@@ -7,5 +7,6 @@ Name: Sabrina Vohra
 | 11/19 |  9:15 - 9:45pm  |                                                                                            I thought through the idea of using bits instead of the whole String. |
 | 11/19 | 10:25 - 11:00pm |                                                                                                    I started rearranging my code to have it work for bit values. |
 | 11/19 | 11:05 - 11:15pm |                                                              I continued to work through a problem I was having with identifying which value the current bit is. |
+| 11/22 |  1:00 - 1:30pm  |                                                                              I thought through the ideas we discussed in class and started writing out the code. |
 
 To add a new row to the table, click into a cell and then hit shift-enter.

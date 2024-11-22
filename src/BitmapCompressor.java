@@ -32,6 +32,10 @@ public class BitmapCompressor {
      */
     public static void compress() {
         // TODO: complete compress()
+        int current = BinaryStdIn.readInt(8);
+        for(int i = 0; i < current; i++) {
+
+        }
         while(BinaryStdIn.readInt(1) != null) {
             int bit = BinaryStdIn.readInt(1);
             int currentRun = 0;
