@@ -8,5 +8,6 @@ Name: Sabrina Vohra
 | 11/19 | 10:25 - 11:00pm |                                                                                                    I started rearranging my code to have it work for bit values. |
 | 11/19 | 11:05 - 11:15pm |                                                              I continued to work through a problem I was having with identifying which value the current bit is. |
 | 11/22 |  1:00 - 1:30pm  |                                                                              I thought through the ideas we discussed in class and started writing out the code. |
+| 11/22 |  1:30 - 1:45pm  |                                                                                                                       I spent time in class discussing the code. |
 
 To add a new row to the table, click into a cell and then hit shift-enter.
