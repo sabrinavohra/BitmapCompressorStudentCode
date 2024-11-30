@@ -16,8 +16,6 @@
  *  1240 bits
  ******************************************************************************/
 
-import jdk.incubator.vector.VectorOperators;
-
 /**
  *  The {@code BitmapCompressor} class provides static methods for compressing
  *  and expanding a binary bitmap input.
@@ -28,6 +26,7 @@ import jdk.incubator.vector.VectorOperators;
  *  @author Sabrina Vohra
  */
 public class BitmapCompressor {
+    private static final int MAX = 255;
     /**
      * Reads a sequence of bits from standard input, compresses them,
      * and writes the results to standard output.
@@ -36,25 +35,29 @@ public class BitmapCompressor {
         // TODO: complete compress()
         String codes = BinaryStdIn.readString();
         int totalLength = codes.length();
-        int current = BinaryStdIn.readInt(totalLength);
         boolean zeroOrOne = true;
         int toPrint = 0;
+        if(codes.charAt(0) == '1') {
+            BinaryStdOut.write(0);
+        }
         for(int i = 0; i < totalLength; i++) {
-            if(zeroOrOne && codes.charAt(i) == '0') {
+            if(zeroOrOne && codes.charAt(i) == '0' || !zeroOrOne && codes.charAt(i) == '1') {
                 toPrint++;
             }
-            else if(!zeroOrOne && codes.charAt(i) == '1') {
-                toPrint++;
-            }
-            if(toPrint >= 255) {
-                BinaryStdOut.write(toPrint);
+            if(toPrint >= MAX) {
+                BinaryStdOut.write(MAX);
                 BinaryStdOut.write(0);
                 toPrint = 0;
             }
-            else if((!zeroOrOne && codes.charAt(i) == '0') || (zeroOrOne && codes.charAt(i) == '1')) {
+            else if ((zeroOrOne && codes.charAt(i) == '1') || (!zeroOrOne && codes.charAt(i) == '0')){
                 zeroOrOne = !zeroOrOne;
                 BinaryStdOut.write(toPrint);
+                toPrint = 0;
             }
+//            else if((!zeroOrOne && codes.charAt(i) == '0') || (zeroOrOne && codes.charAt(i) == '1')) {
+//                zeroOrOne = !zeroOrOne;
+//                BinaryStdOut.write(toPrint);
+//            }
         }
 //        while(BinaryStdIn.readInt(1) != null) {
 //            int bit = BinaryStdIn.readInt(1);
