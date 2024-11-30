@@ -9,5 +9,6 @@ Name: Sabrina Vohra
 | 11/19 | 11:05 - 11:15pm |                                                              I continued to work through a problem I was having with identifying which value the current bit is. |
 | 11/22 |  1:00 - 1:30pm  |                                                                              I thought through the ideas we discussed in class and started writing out the code. |
 | 11/22 |  1:30 - 1:45pm  |                                                                                                                       I spent time in class discussing the code. |
+| 11/29 |  8:35 - 8:55pm  |             I wrote the code for the basic ideas of what we talked about in class. I wanted to save this version before testing and tweaking if it doesn't work. |
 
 To add a new row to the table, click into a cell and then hit shift-enter.
