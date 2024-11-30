@@ -12,5 +12,6 @@ Name: Sabrina Vohra
 | 11/29 |  8:35 - 8:55pm  |                                   I wrote the code for the basic ideas of what we talked about in class. I wanted to save this version before testing and tweaking if it doesn't work. |
 | 11/29 |  8:55 - 9:30pm  | I tested my code and ran into errors regarding the compression and expansion relationship. My code isn't compressing correctly and either makes the code more bits or turns it into 0. |
 | 11/29 | 9:50 - 10:20pm  |                                                                                                                    I tried to approach solving by using a boolean instead of a String. |
+| 11/30 | 10:25 - 10:45am |    I tried to approach it using multiple while loops but was having errors with my boolean organization. I am now trying to approach it with if statements inside a single while loop. |
 
 To add a new row to the table, click into a cell and then hit shift-enter.

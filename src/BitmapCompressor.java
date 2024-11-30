@@ -33,17 +33,55 @@ public class BitmapCompressor {
      */
     public static void compress() {
         // TODO: complete compress()
+        /* int toPrint = 0;
+        boolean zeroOrOne = true;
+        boolean readIn = BinaryStdIn.readBoolean();
+        if(readIn) {
+            BinaryStdOut.write(0);
+            zeroOrOne = false;
+        }
+        while(readIn && !zeroOrOne) {
+            toPrint++;
+            if(toPrint >= MAX) {
+                BinaryStdOut.write(MAX);
+                BinaryStdOut.write(0);
+            }
+            readIn = BinaryStdIn.readBoolean();
+        }
+        while(!readIn && zeroOrOne) {
+            toPrint++;
+            if(toPrint >= MAX) {
+                BinaryStdOut.write(MAX);
+                BinaryStdOut.write(0);
+            }
+            readIn = BinaryStdIn.readBoolean();
+        }
+        while(readIn && zeroOrOne) {
+            BinaryStdOut.write(toPrint);
+            zeroOrOne = !zeroOrOne;
+            readIn = BinaryStdIn.readBoolean();
+        }
+        while(!readIn && !zeroOrOne) {
+            BinaryStdOut.write(1);
+            zeroOrOne = !zeroOrOne;
+            readIn = BinaryStdIn.readBoolean();
+        }
+        */
         int toPrint = 0;
         boolean zeroOrOne = true;
         while(!BinaryStdIn.isEmpty()) {
             boolean readIn = BinaryStdIn.readBoolean();
             if(toPrint >= MAX) {
                 BinaryStdOut.write(MAX);
+                BinaryStdOut.write(0);
             }
-            if((!readIn && zeroOrOne) || (readIn && !zeroOrOne)) {
+            if(!readIn && zeroOrOne) {
                 toPrint++;
             }
-            else {
+            if (readIn && !zeroOrOne) {
+                toPrint++;
+            }
+            else if((readIn && zeroOrOne) || (!readIn && !zeroOrOne)){
                 BinaryStdOut.write(toPrint);
                 toPrint = 0;
                 zeroOrOne = !zeroOrOne;
