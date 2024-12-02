@@ -27,118 +27,37 @@
  */
 public class BitmapCompressor {
     private static final int MAX = 255;
+    private static final int BYTE = 8;
     /**
      * Reads a sequence of bits from standard input, compresses them,
      * and writes the results to standard output.
      */
     public static void compress() {
         // TODO: complete compress()
-        /* int toPrint = 0;
-        boolean zeroOrOne = true;
-        boolean readIn = BinaryStdIn.readBoolean();
-        if(readIn) {
-            BinaryStdOut.write(0);
-            zeroOrOne = false;
-        }
-        while(readIn && !zeroOrOne) {
-            toPrint++;
-            if(toPrint >= MAX) {
-                BinaryStdOut.write(MAX);
-                BinaryStdOut.write(0);
-            }
-            readIn = BinaryStdIn.readBoolean();
-        }
-        while(!readIn && zeroOrOne) {
-            toPrint++;
-            if(toPrint >= MAX) {
-                BinaryStdOut.write(MAX);
-                BinaryStdOut.write(0);
-            }
-            readIn = BinaryStdIn.readBoolean();
-        }
-        while(readIn && zeroOrOne) {
-            BinaryStdOut.write(toPrint);
-            zeroOrOne = !zeroOrOne;
-            readIn = BinaryStdIn.readBoolean();
-        }
-        while(!readIn && !zeroOrOne) {
-            BinaryStdOut.write(1);
-            zeroOrOne = !zeroOrOne;
-            readIn = BinaryStdIn.readBoolean();
-        }
-        */
         int toPrint = 0;
-        boolean zeroOrOne = true;
+        boolean one = false; // Starts as 0
         while(!BinaryStdIn.isEmpty()) {
             boolean readIn = BinaryStdIn.readBoolean();
-            if(toPrint >= MAX) {
-                BinaryStdOut.write(MAX);
-                BinaryStdOut.write(0);
-            }
-            if(!readIn && zeroOrOne) {
-                toPrint++;
-            }
-            if (readIn && !zeroOrOne) {
-                toPrint++;
-            }
-            else if((readIn && zeroOrOne) || (!readIn && !zeroOrOne)){
-                BinaryStdOut.write(toPrint);
+            if (readIn != one || toPrint == MAX) {
+                if (toPrint == MAX) {
+                    BinaryStdOut.write(MAX, BYTE);
+                    BinaryStdOut.write(0, BYTE);
+                    toPrint -= 255;
+                }
+                BinaryStdOut.write(toPrint, BYTE);
                 toPrint = 0;
-                zeroOrOne = !zeroOrOne;
+                one = readIn;
+            }
+            toPrint++;
+        }
+        if (toPrint > 0) {
+            while (toPrint > MAX) {
+                BinaryStdOut.write(MAX, BYTE);
+                BinaryStdOut.write(0, BYTE);
+                toPrint -= 255;
             }
         }
         BinaryStdOut.close();
-        /*int totalLength = codes.length();
-        boolean zeroOrOne = true;
-        int toPrint = 0;
-        if(codes.charAt(0) == '1') {
-            BinaryStdOut.write(0);
-        }
-        for(int i = 0; i < totalLength; i++) {
-            if((zeroOrOne && codes.charAt(i) == '0') || (!zeroOrOne && codes.charAt(i) == '1')) {
-                BinaryStdOut.write("hello");
-                toPrint++;
-            }
-            if(toPrint >= MAX) {
-                BinaryStdOut.write(MAX);
-                BinaryStdOut.write(0);
-                toPrint = 0;
-            }
-            else if ((zeroOrOne && codes.charAt(i) == '1') || (!zeroOrOne && codes.charAt(i) == '0')){
-                zeroOrOne = !zeroOrOne;
-                BinaryStdOut.write(toPrint);
-                toPrint = 0;
-            } */
-//            else if((!zeroOrOne && codes.charAt(i) == '0') || (zeroOrOne && codes.charAt(i) == '1')) {
-//                zeroOrOne = !zeroOrOne;
-//                BinaryStdOut.write(toPrint);
-//            }
-//        while(BinaryStdIn.readInt(1) != null) {
-//            int bit = BinaryStdIn.readInt(1);
-//            int currentRun = 0;
-//            int currentVal = bit;
-//            if(bit == currentVal) {
-//                currentRun++;
-//                if(currentRun == 99) {
-//                    if(currentVal == 0) {
-//                        BinaryStdOut.write(990, 3);
-//                    }
-//                    else {
-//                        BinaryStdOut.write(991, 3);
-//                    }
-//                }
-//            }
-//            else {
-//                BinaryStdOut.write(currentRun + "" + currentVal);
-//                currentRun = 0;
-//                if(currentVal == 0) {
-//                    currentVal = 1;
-//                }
-//                else {
-//                    currentVal = 0;
-//                }
-//            }
-//        }
     }
 
     /**
@@ -160,31 +79,6 @@ public class BitmapCompressor {
             }
             zeroOrOne = !zeroOrOne;
         }
-   /*     String total = BinaryStdIn.readString();
-        int current = 0;
-        for(int i = 0; i < total.length(); i++) {
-            for(int j = 0; j < (int)total.charAt(i); j++) {
-                BinaryStdOut.write(current);
-            }
-            if(current == 0) {
-                current = 1;
-            }
-            else {
-                current = 0;
-            }
-        } */
-//        int a = BinaryStdIn.readInt(3);
-//        if((a % 10) == 0) {
-//            for(int i = 0; i < a/10; i++) {
-//                BinaryStdOut.write(0);
-//            }
-//        }
-//        else {
-//            for(int i = 0; i < a/10; i++) {
-//                BinaryStdOut.write(1);
-//            }
-//        }
-//        BinaryStdOut.close();
         BinaryStdOut.close();
     }
 

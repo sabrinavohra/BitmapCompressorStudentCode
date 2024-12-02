@@ -13,5 +13,6 @@ Name: Sabrina Vohra
 | 11/29 |  8:55 - 9:30pm  | I tested my code and ran into errors regarding the compression and expansion relationship. My code isn't compressing correctly and either makes the code more bits or turns it into 0. |
 | 11/29 | 9:50 - 10:20pm  |                                                                                                                    I tried to approach solving by using a boolean instead of a String. |
 | 11/30 | 10:25 - 10:45am |    I tried to approach it using multiple while loops but was having errors with my boolean organization. I am now trying to approach it with if statements inside a single while loop. |
+| 12/1  | 12:45 - 1:20pm  |                                           I tried to specify the number of bits to use when printing out the numbers, hopefully this can help make the expansion method work properly. |
 
 To add a new row to the table, click into a cell and then hit shift-enter.
