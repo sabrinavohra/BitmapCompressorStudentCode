@@ -34,29 +34,23 @@ public class BitmapCompressor {
      */
     public static void compress() {
         // TODO: complete compress()
-        int toPrint = 0;
-        boolean one = false; // Starts as 0
+        int count = 0;
+        boolean last = false; // Starts as 0
         while(!BinaryStdIn.isEmpty()) {
             boolean readIn = BinaryStdIn.readBoolean();
-            if (readIn != one || toPrint == MAX) {
-                if (toPrint == MAX) {
-                    BinaryStdOut.write(MAX, BYTE);
-                    BinaryStdOut.write(0, BYTE);
-                    toPrint -= 255;
-                }
-                BinaryStdOut.write(toPrint, BYTE);
-                toPrint = 0;
-                one = readIn;
+            if(readIn != last) {
+                BinaryStdOut.write(count, BYTE);
+                count = 0;
             }
-            toPrint++;
-        }
-        if (toPrint > 0) {
-            while (toPrint > MAX) {
+            if((readIn == last) && (count == MAX)) {
                 BinaryStdOut.write(MAX, BYTE);
                 BinaryStdOut.write(0, BYTE);
-                toPrint -= 255;
+                count = 0;
             }
+            last = readIn;
+            count++;
         }
+        BinaryStdOut.write(count, BYTE);
         BinaryStdOut.close();
     }
 
@@ -66,18 +60,18 @@ public class BitmapCompressor {
      */
     public static void expand() {
         // TODO: complete expand()
-        boolean zeroOrOne = true;
+        boolean one = false;
         while(!BinaryStdIn.isEmpty()) {
-            int num = BinaryStdIn.readInt(8);
+            int num = BinaryStdIn.readInt(BYTE);
             for(int i = 0; i < num; i++) {
-                if(zeroOrOne) {
-                    BinaryStdOut.write(0);
+                if(one) {
+                    BinaryStdOut.write(1, 1);
                 }
                 else {
-                    BinaryStdOut.write(1);
+                    BinaryStdOut.write(0, 1);
                 }
             }
-            zeroOrOne = !zeroOrOne;
+            one = !one;
         }
         BinaryStdOut.close();
     }

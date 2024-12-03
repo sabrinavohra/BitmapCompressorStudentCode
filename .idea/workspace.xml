@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5344144c-2391-49b9-ba87-481b14af2cb8" name="Changes" comment="" />
+    <list default="true" id="5344144c-2391-49b9-ba87-481b14af2cb8" name="Changes" comment="Bit length specification.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WORK_LOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/WORK_LOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BitmapCompressor.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapCompressor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BitmapCompressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapCompressor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qCompressed.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/qCompressed.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qExpanded.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/qExpanded.bin" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,22 +20,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sabrinavohra&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ztblick/BitmapCompressorStudentCode&quot;,
+    &quot;accountId&quot;: &quot;8caaf94e-82fc-4e2c-9769-ffd00528c73e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2kcIqAfuSoHjthzvQQ3ytsJYcnS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,6 +57,123 @@
       <option name="presentableId" value="Default" />
       <updated>1723576628269</updated>
     </task>
+    <task id="LOCAL-00001" summary="Started compression work.">
+      <option name="closed" value="true" />
+      <created>1731697216890</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731697216890</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Worked on new approach.">
+      <option name="closed" value="true" />
+      <created>1732038157266</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732038157266</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Thought through new approach.">
+      <option name="closed" value="true" />
+      <created>1732084124788</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732084124788</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Worked through new approach.">
+      <option name="closed" value="true" />
+      <created>1732086301637</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732086301637</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Worked through new approach.">
+      <option name="closed" value="true" />
+      <created>1732086913755</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732086913755</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Worked through new approach.">
+      <option name="closed" value="true" />
+      <created>1732311085185</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732311085185</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Thought through new approach.">
+      <option name="closed" value="true" />
+      <created>1732311581433</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732311581433</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Wrote out code for approach.">
+      <option name="closed" value="true" />
+      <created>1732942357595</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732942357595</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Tested and tweaked code.">
+      <option name="closed" value="true" />
+      <created>1732944474033</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732944474033</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Used boolean to read instead of String.">
+      <option name="closed" value="true" />
+      <created>1732947604938</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732947604938</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Used boolean to read instead of String.">
+      <option name="closed" value="true" />
+      <created>1732948416015</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732948416015</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Single while loop.">
+      <option name="closed" value="true" />
+      <created>1732992487349</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732992487349</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Bit length specification.">
+      <option name="closed" value="true" />
+      <created>1733174549271</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733174549272</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Started compression work." />
+    <MESSAGE value="Worked on new approach." />
+    <MESSAGE value="Worked through new approach." />
+    <MESSAGE value="Thought through new approach." />
+    <MESSAGE value="Wrote out code for approach." />
+    <MESSAGE value="Tested and tweaked code." />
+    <MESSAGE value="Used boolean to read instead of String." />
+    <MESSAGE value="Single while loop." />
+    <MESSAGE value="Bit length specification." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bit length specification." />
   </component>
 </project>
