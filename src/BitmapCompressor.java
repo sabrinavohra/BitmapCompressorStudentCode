@@ -33,23 +33,28 @@ public class BitmapCompressor {
      * and writes the results to standard output.
      */
     public static void compress() {
-        // TODO: complete compress()
+        // Initializes count and the last bit that was read in
         int count = 0;
-        boolean last = false; // Starts as 0
+        boolean last = false;
         while(!BinaryStdIn.isEmpty()) {
             boolean readIn = BinaryStdIn.readBoolean();
+            // If the read in number doesn't match the last number, prints out number of repeats and resets count
             if(readIn != last) {
                 BinaryStdOut.write(count, BYTE);
                 count = 0;
             }
+            // If the read in number is the same as the last and the count is greater than the 8-bit limit
             if((readIn == last) && (count == MAX)) {
+                // Prints max and 0 and resets the count
                 BinaryStdOut.write(MAX, BYTE);
                 BinaryStdOut.write(0, BYTE);
                 count = 0;
             }
+            // Sets last to the current number
             last = readIn;
             count++;
         }
+        // Writes out any remaining
         BinaryStdOut.write(count, BYTE);
         BinaryStdOut.close();
     }
@@ -59,18 +64,21 @@ public class BitmapCompressor {
      * and writes the results to standard output.
      */
     public static void expand() {
-        // TODO: complete expand()
+        // Initializes boolean to keep track of current number being written
         boolean one = false;
         while(!BinaryStdIn.isEmpty()) {
             int num = BinaryStdIn.readInt(BYTE);
+            // Writes out number the specified number of times
             for(int i = 0; i < num; i++) {
                 if(one) {
+                    // Specifies 1 bit to write out
                     BinaryStdOut.write(1, 1);
                 }
                 else {
                     BinaryStdOut.write(0, 1);
                 }
             }
+            // Sets value to the other number before repeating and printing
             one = !one;
         }
         BinaryStdOut.close();
